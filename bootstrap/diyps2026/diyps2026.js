@@ -1,5 +1,5 @@
 var img;
-var initials ='jm'; // your initials
+var initials ='ml'; // your initials
 var choice = '1'; // starting choice, so it is not empty
 var screenbg = 250; // off white background
 var lastscreenshot=61; // last screenshot never taken
@@ -8,16 +8,16 @@ function preload() {
 // preload() runs once, it may make you wait
 //  img = loadImage('cat.jpg');  // cat.jpg needs to be next to this .js file
 // you can link to an image on your github account
-   img = loadImage('https://madisonlee02-prog.github.io/brushes/brush1.png');
-   img2 = loadImage('https://madisonlee02-prog.github.io/brushes/brush2.png');
-   img3 = loadImage('https://madisonlee02-prog.github.io/brushes/brush3.png');
-   img4 = loadImage('https://madisonlee02-prog.github.io/brushes/brush4.png');
-   img5 = loadImage('https://madisonlee02-prog.github.io/brushes/brush5.png');
-   img6 = loadImage('https://madisonlee02-prog.github.io/brushes/brush6.png');
-   img7 = loadImage('https://madisonlee02-prog.github.io/brushes/brush7.png');
-   img8 = loadImage('https://madisonlee02-prog.github.io/brushes/brush8.png');
-   img9 = loadImage('https://madisonlee02-prog.github.io/brushes/brush9.png');
-   img10 = loadImage('https://madisonlee02-prog.github.io/brushes/brush10.png');
+   img = loadImage('https://madisonlee02-prog.github.io/bootstrap/brushes/brush1.png');
+   img2 = loadImage('https://madisonlee02-prog.github.io/bootstrap/brushes/brush2.png');
+   img3 = loadImage('https://madisonlee02-prog.github.io/bootstrap/brushes/brush3.png');
+   img4 = loadImage('https://madisonlee02-prog.github.io/bootstrap/brushes/brush4.png');
+   img5 = loadImage('https://madisonlee02-prog.github.io/bootstrap/brushes/brush5.png');
+   img6 = loadImage('https://madisonlee02-prog.github.io/bootstrap/brushes/brush6.png');
+   img7 = loadImage('https://madisonlee02-prog.github.io/bootstrap/brushes/brush7.png');
+   img8 = loadImage('https://madisonlee02-prog.github.io/bootstrap/brushes/brush8.png');
+   img9 = loadImage('https://madisonlee02-prog.github.io/bootstrap/brushes/brush9.png');
+   img10 = loadImage('https://madisonlee02-prog.github.io/bootstrap/brushes/brush10.png');
    
 }
 
