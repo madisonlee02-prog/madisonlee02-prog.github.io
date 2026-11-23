@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<title>Play with your Pet Fly!</title>
+</head>
+<body>
+
+<h1>Play with your Pet Fly!</h1>
+
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <div class="container-fluid">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">HOME</a></li>
+</li>
+</ul>
+</div>
+</nav>
+
+<p>Even your newly adopted fly needs exercise. Run around and play tag with it!</p>
+
+<iframe src="video_game/index.html" height="600" width="600" title="VIDEO GAME"></iframe>
+
+<pre>
+
+var ballx=300;
+var bally=300;
+var ballSize=40;
+var score = 0;
+var gameState = "L1";
+var img;
+var img2;
+
+//function preload() {
+//soundFormats("mp3");
+function backgroundMusic() {
+song = LoadSound('https://madisonlee02-prog.github.io/bootstrap/hong-kong-97.mp3');
+//song.play();
+//userStartAudio();
+}
+
+function setup() {
+createCanvas(600, 600);
+textAlign(CENTER);
+textSize(20);
+
+//function preload() {
+img = loadImage('https://madisonlee02-prog.github.io/bootstrap/videogame/fly.png');
+img2 = loadImage('https://madisonlee02-prog.github.io/bootstrap/fly-winner.jpg');
+
+} // end setup
+
+
+function draw() {
+background(220);
+if(gameState == "L1"){
+levelOne();
+}
+if(gameState == "L2"){
+  levelTwo();
+}
+if(gameState == "L3"){
+  levelThree();
+}
+if(gameState == "L4"){
+  levelFour();
+}
+if(gameState == "L5"){
+  levelFive();
+}
+if(gameState == "L6"){
+  levelSix();
+}
+if(gameState == "youWin"){
+  youWin();
+}
+
+ text(("Score: "+ score), width/2, 40);
+} //end draw
+
+function levelOne(){
+  text("Level 1", width/2, height-20);
+  var distToBall= dist(ballx, bally, mouseX, mouseY);
+  if(distToBall < ballSize/2){
+    ballx=random(width);
+    bally=random(height);
+    score = score + 1;
+  }// end of if stmt
+  
+  if(score>=5){ 
+    gameState = "L2";
+  }
+   
+  image(img, ballx-ballSize/2, bally-ballSize/2, ballSize, ballSize);
+  line(ballx, bally, mouseX, mouseY);
+  
+} //end level 1
+
+function levelTwo(){
+  background(219, 179, 179);
+  text("Level 2!", width/2, height-20);
+  var distToBall= dist(ballx, bally, mouseX, mouseY);
+  if(distToBall < ballSize/2){
+    ballx=random(width);
+    bally=random(height);
+    score = score + 1;
+  }// end of if stmt
+  
+  if(score>=10){ 
+    gameState = "L3";
+  }
+  
+  image(img, ballx-ballSize/2, bally-ballSize/2, ballSize, ballSize);
+  //line(ballx, bally, mouseX, mouseY);
+  
+} //end level 2
+
+function levelThree(){
+  background(219, 140, 140);
+  text("LEVEL 3!", width/2, height-20);
+  var distToBall= dist(ballx, bally, mouseX, mouseY);
+  if(distToBall < ballSize/2){
+    ballx=random(width);
+    bally=random(height);
+    score = score + 1;
+    ballSize = ballSize -1;
+  }// end of if stmt
+  
+  if(score>=15){ 
+    gameState = "L4";
+     //background(random(255),random(255),random(255));
+  }
+  
+ image(img, ballx-ballSize/2, bally-ballSize/2, ballSize, ballSize);
+  //line(ballx, bally, mouseX, mouseY);
+  
+} //end level 3
+
+function levelFour(){
+  background(219, 103, 103);
+  text("LEVEL FOUR", width/2, height-20);
+  var distToBall= dist(ballx, bally, mouseX, mouseY);
+  if(distToBall < ballSize/2){
+    ballx=random(width);
+    bally=random(height);
+    score = score + 1;
+    ballSize = ballSize -2;
+  }// end of if stmt
+  
+  if(score>=20){ 
+   gameState = "L5";
+     //background(random(255),random(255),random(255));
+  }
+  
+ image(img, ballx-ballSize/2, bally-ballSize/2, ballSize, ballSize);
+  //line(ballx, bally, mouseX, mouseY);
+  
+} //end level 4
+
+function levelFive(){
+  background(219, 70, 70);
+  text("FIVE", width/2, height-20);
+  var distToBall= dist(ballx, bally, mouseX, mouseY);
+  if(distToBall < ballSize/2){
+    ballx=random(width);
+    bally=random(height);
+    score = score + 1;
+    ballSize = ballSize -2;
+  }// end of if stmt
+  
+  if(score>=25){ 
+    gameState = "L6";
+     //background(random(255),random(255),random(255));
+  }
+  
+ image(img, ballx-ballSize/2, bally-ballSize/2, ballSize, ballSize);
+  //line(ballx, bally, mouseX, mouseY);
+  
+} //end level 5
+
+function levelSix(){
+  background(219, 38, 38);
+  text("6", width/2, height-20);
+  var distToBall= dist(ballx, bally, mouseX, mouseY);
+  if(distToBall < ballSize/2){
+    ballx=random(width);
+    bally=random(height);
+    score = score + 1;
+    ballSize = ballSize -2;
+  }// end of if stmt
+  
+  if(score>=30){ 
+    gameState = "youWin";
+  }
+  
+ image(img, ballx-ballSize/2, bally-ballSize/2, ballSize, ballSize);
+  //line(ballx, bally, mouseX, mouseY);
+
+}
+
+function youWin(){
+background(img2);
+  //text(("you are a wiener"), width/2, 60);
+}
+
+
+</pre>
+
+</body>
+</html>
